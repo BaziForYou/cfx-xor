@@ -15,15 +15,15 @@ local function BitXOR(a,b) -- https://stackoverflow.com/questions/5977654/how-do
 end
 
 local function dec2Hex(val) -- https://gameguardian.net/forum/topic/31634-converting-decimal-to-hex/?do=findComment&comment=115371
-	if val >= 0 and val < 16 then
-		return string.format("0%X", tonumber(val))
-	elseif val > 15 and val < 128 then
-		return string.format("%X", tonumber(val))
-	elseif val == 0 then
-		return "00"
-	elseif val < 0 and val > -128 then
-	    return string.sub(string.format("%X", tostring(val)), 15)
-	end
+  if val >= 0 and val < 16 then
+    return string.format("0%X", tonumber(val))
+  elseif val > 15 and val < 128 then
+    return string.format("%X", tonumber(val))
+  elseif val == 0 then
+    return "00"
+  elseif val < 0 and val > -128 then
+    return string.sub(string.format("%X", tostring(val)), 15)
+  end
 end
 
 XOR_Ecode = function(sentString,sentKey,customSpace)
